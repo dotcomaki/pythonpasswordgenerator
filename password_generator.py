@@ -12,8 +12,11 @@ def generate_random_password(length=12):
 def generate_password():
     password_length = int(length_entry.get())
     random_password = generate_random_password(password_length)
-    result_label.config(text="Random Password: " + random_password)
+    
+    # Copy the password to clipboard
     pyperclip.copy(random_password)
+    
+    result_label.config(text="Random Password: " + random_password)
 
     # Calculate the new window width based on password length
     new_width = max(300, len(random_password) * 12)  # Minimum width of 300 pixels
