@@ -6,11 +6,6 @@ This is a simple Python application that generates random passwords with a moder
 
 Make sure you have Python installed on your computer. If you don't have Python installed, you can download it from the official website: [Python Downloads](https://www.python.org/downloads/)
 
-Additionally, you'll need to install the `pyperclip` library to enable copying generated passwords to the clipboard. You can install it using `pip`:
-```
-pip install pyperclip
-```
-
 ## Usage
 
 1. Clone or download this repository to your local machine.
