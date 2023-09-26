@@ -9,10 +9,17 @@ Make sure you have Python installed on your computer. If you don't have Python i
 ## Usage
 
 1. Clone or download this repository to your local machine.
+```
+git clone https://github.com/dotcomaki/pythonpasswordgenerator
+```
+2. Change your current directory into the pythonpasswordgenerator repository.
+```
+cd pythonpasswordgenerator
+```
 
-2. Open a terminal or command prompt and navigate to the directory where you saved the repository.
+4. Open a terminal or command prompt and navigate to the directory where you saved the repository.
 
-3. Run the following command to start the application:
+5. Run the following command to start the application:
 
    ```
    python password_generator.py
