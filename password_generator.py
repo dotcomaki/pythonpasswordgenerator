@@ -13,13 +13,22 @@ def generate_password():
     password_length = int(length_entry.get())
     random_password = generate_random_password(password_length)
     result_label.config(text="Random Password: " + random_password)
-    # Copy the password to clipboard
     pyperclip.copy(random_password)
+
+    # Calculate the new window width based on password length
+    new_width = max(300, len(random_password) * 12)  # Minimum width of 300 pixels
+
+    # Adjust window size
+    root.geometry(f"{new_width}x200")
+
+    # Adjust font size based on password length
+    font_size = max(12, 240 // len(random_password))  # Minimum font size of 12
+    style.configure("TLabel", font=("Helvetica", font_size))
 
 # Create the main window
 root = tk.Tk()
 root.title("Random Password Generator")
-root.geometry("300x200")  # Adjusted height to accommodate the new button
+root.geometry("300x200")
 
 # Configure style
 style = ttk.Style()
