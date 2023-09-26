@@ -16,9 +16,7 @@ git clone https://github.com/dotcomaki/pythonpasswordgenerator
 ```
 cd pythonpasswordgenerator
 ```
-3. Open a terminal or command prompt and navigate to the directory where you saved the repository.
-
-4. Run the following command to start the application:
+3. Open a terminal or command prompt and run the following command to start the application:
 ```
 python password_generator.py
 ```
