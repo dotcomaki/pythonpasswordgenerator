@@ -2,7 +2,6 @@ import random
 import string
 import tkinter as tk
 from tkinter import ttk
-import pyperclip
 
 def generate_random_password(length=12):
     characters = string.ascii_letters + string.digits + string.punctuation
@@ -10,6 +9,7 @@ def generate_random_password(length=12):
     return password
 
 def generate_password():
+    import pyperclip  # Import pyperclip here
     password_length = int(length_entry.get())
     random_password = generate_random_password(password_length)
     
@@ -52,7 +52,7 @@ result_label = ttk.Label(root, text="")
 result_label.grid(row=2, columnspan=2, padx=10, pady=10)
 
 # Add a button to copy the password to clipboard
-copy_button = ttk.Button(root, text="Copy to Clipboard", command=lambda: pyperclip.copy(result_label.cget("text")[16:]))
+copy_button = ttk.Button(root, text="Copy to Clipboard", command=generate_password)
 copy_button.grid(row=3, columnspan=2, padx=10, pady=10)
 
 # Start the GUI main loop
