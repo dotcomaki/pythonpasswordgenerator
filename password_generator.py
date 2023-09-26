@@ -13,10 +13,14 @@ def generate_password():
     random_password = generate_random_password(password_length)
     
     # Clear any existing text in the text widget
+    password_text.config(state=tk.NORMAL)  # Enable editing
     password_text.delete("1.0", tk.END)
     
     # Insert the generated password into the text widget
     password_text.insert(tk.END, random_password)
+    
+    # Disable editing again to make it read-only
+    password_text.config(state=tk.DISABLED)
 
 # Create the main window
 root = tk.Tk()
@@ -40,6 +44,7 @@ generate_button.grid(row=1, columnspan=2, padx=10, pady=10)
 
 password_text = tk.Text(root, wrap=tk.WORD, height=5, width=30)
 password_text.grid(row=2, columnspan=2, padx=10, pady=10)
+password_text.config(state=tk.DISABLED)  # Make the text widget read-only
 
 # Start the GUI main loop
 root.mainloop()
