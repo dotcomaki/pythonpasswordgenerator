@@ -9,29 +9,14 @@ def generate_random_password(length=12):
     return password
 
 def generate_password():
-    import pyperclip  # Import pyperclip here
     password_length = int(length_entry.get())
     random_password = generate_random_password(password_length)
-    
-    # Copy the password to clipboard
-    pyperclip.copy(random_password)
-    
     result_label.config(text="Random Password: " + random_password)
-
-    # Calculate the new window width based on password length
-    new_width = max(300, len(random_password) * 12)  # Minimum width of 300 pixels
-
-    # Adjust window size
-    root.geometry(f"{new_width}x200")
-
-    # Adjust font size based on password length
-    font_size = max(12, 240 // len(random_password))  # Minimum font size of 12
-    style.configure("TLabel", font=("Helvetica", font_size))
 
 # Create the main window
 root = tk.Tk()
 root.title("Random Password Generator")
-root.geometry("300x200")
+root.geometry("300x150")
 
 # Configure style
 style = ttk.Style()
@@ -50,10 +35,6 @@ generate_button.grid(row=1, columnspan=2, padx=10, pady=10)
 
 result_label = ttk.Label(root, text="")
 result_label.grid(row=2, columnspan=2, padx=10, pady=10)
-
-# Add a button to copy the password to clipboard
-copy_button = ttk.Button(root, text="Copy to Clipboard", command=generate_password)
-copy_button.grid(row=3, columnspan=2, padx=10, pady=10)
 
 # Start the GUI main loop
 root.mainloop()
